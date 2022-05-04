@@ -66,6 +66,7 @@ function mutateArray(a) {
       }
     })
   }
+  a = a.filter(x => x['guest_type'] !== 'crew');
   return a;
 }
 
