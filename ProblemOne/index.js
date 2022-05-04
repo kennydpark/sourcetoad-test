@@ -61,6 +61,8 @@ function mutateArray(a) {
       if (typeof a[i][key] === 'object' && a[i][key] !== null) {
         Object.assign(a[i], a[i][key])
         delete a[i][key]
+        a[i]['some_total'] = a[i]['some_array'].reduce((add, n) => add + n, 0)
+        delete a[i]['some_array'];
       }
     })
   }
