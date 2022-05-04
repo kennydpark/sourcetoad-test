@@ -56,7 +56,15 @@ var arr = [
 ];
 
 function mutateArray(a) {
-    return a;
+  for (let i = 0; i < a.length; i++) {
+    Object.keys(a[i]).forEach((key) => {
+      if (typeof a[i][key] === 'object' && a[i][key] !== null) {
+        Object.assign(a[i], a[i][key])
+        delete a[i][key]
+      }
+    })
+  }
+  return a;
 }
 
 $(document).ready(function() {
