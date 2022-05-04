@@ -67,6 +67,23 @@ function mutateArray(a) {
     })
   }
   a = a.filter(x => x['guest_type'] !== 'crew');
+  function Compare(x, y) {
+    if (x['last_name'] < y['last_name']) {
+      return -1;
+    } else if (x['last_name'] > y['last_name']) {
+      return 1;
+    } else if (x['last_name'] === y['last_name']) {
+      if (x['first_name'] < y['first_name']) {
+        return -1
+      } else if (x['first_name'] > y['first_name']) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    return 0;
+  }
+  a.sort(Compare);
   return a;
 }
 
