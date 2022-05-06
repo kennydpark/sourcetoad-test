@@ -46,11 +46,18 @@ body {
   cursor: pointer;
 }
 
-.Button.top {
+.top {
   background-color: #a8a8a8;
 }
 
-.Button.operator {
+.operator {
   color: white;
   background-color: #f38633;
+}
+
+.zero {
+  width: 255px;
+  grid-column: 1 / span 2;
+  justify-content: left;
+  padding-left: 50px;
 }
